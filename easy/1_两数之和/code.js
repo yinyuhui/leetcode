@@ -4,6 +4,7 @@
  * @return {number[]}
  */
 
+//  双重遍历查找 132ms
 // var twoSum = function(nums, target) {
 //     for(let index = 0; index < nums.length; index++ ) {
 //             for(let i = index + 1; i < nums.length; i++) {
@@ -15,7 +16,7 @@
 //     }
 // };
 
-// 最优解
+// 最优解 对象存储 64ms
 // var twoSum = function(nums, target) {
 //     let obj = {}
 //     for(let index = 0; index < nums.length; index++)  {
@@ -29,6 +30,7 @@
 //     }
 // };
 
+// map 存储 76ms
 var twoSum = function(nums, target) {
     let map = new Map()
     for (let index = 0; index < nums.length; index++) {

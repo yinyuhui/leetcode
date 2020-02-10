@@ -3,6 +3,7 @@
  * @return {number}
  */
 
+// 116ms
 // var reverse = function(x) {
 //     let arr = String(x).split('').reverse()
 //     let sign = undefined
@@ -22,7 +23,7 @@
 
 // };
 
-// 最优解 API
+// 最优解 API 88ms
 var reverse = function(x) {
     let sign = Math.sign(x)
     let result =
