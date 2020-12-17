@@ -60,6 +60,7 @@ class MinHeap {
     }
 
     pop() {
+        if (this.list.length <= 1) return this.list.pop()
         let res = this.list[0]
         this.list[0] = this.list.pop()
         this._shiftDown(0)
@@ -75,5 +76,5 @@ for (let i = 0; i < count; i++) {
 }
 
 for (let i = 0; i < count; i++) {
-    heap.pop()
+    console.log(heap.pop())
 }

@@ -25,6 +25,7 @@ class MaxHeap {
     }
 
     pop() {
+        if (this.size() <= 1) return this.list.pop()
         // 把堆顶保留，用于最后返回
         const res = this.list[0]
         // 把最后一项赋给堆顶，下沉，用的 pop 可以将堆减1
@@ -64,5 +65,5 @@ for (let i = 0; i < count; i++) {
 }
 
 for (let i = 0; i < count; i++) {
-    heap.pop()
+    console.log(heap.pop())
 }
