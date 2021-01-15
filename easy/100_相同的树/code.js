@@ -48,22 +48,22 @@
 // };
 
 // 64ms
-var isSameTree = function(p, q) {
-  // 一个节点有值 另一个是空节点 不相等
-  if ((p && !q) || (q && !p)) return false;
-  // 都是空节点 相等
-  if (!p && !q) return true;
-  // 遍历判断左右子树是否相等 若值相等且左右子树相等 才说明两棵树相等
+var isSameTree = function (p, q) {
+    // 一个节点有值 另一个是空节点 不相等
+    if ((p && !q) || (q && !p)) return false
+    // 都是空节点 相等
+    if (!p && !q) return true
+    // 遍历判断左右子树是否相等 若值相等且左右子树相等 才说明两棵树相等
 
-  // 不需要加个if嵌套
-  // if(p && q) {
-  return (
-    p.val === q.val &&
-    isSameTree(p.left, q.left) &&
-    isSameTree(p.right, q.right)
-  );
-  // }
-};
+    // 不需要加个if嵌套
+    // if(p && q) {
+    return (
+        p.val === q.val &&
+        isSameTree(p.left, q.left) &&
+        isSameTree(p.right, q.right)
+    )
+    // }
+}
 
 // 128ms 两棵树同步遍历 判断是否相等
 // var isSameTree = function(p, q) {
@@ -101,3 +101,30 @@ var isSameTree = function(p, q) {
 //     // 两棵树都完全遍历了 且没有遇到不等情况  最终返回true
 //     if(!p && !q) return true
 // }
+
+// var isSameTree = function (p, q) {
+//     // 两个节点都不存在，true - 相同
+//     if (!p && !q) return true
+
+//     // 一个存在一个不存在或两个值不同，false - 不相同
+//     if ((p && !q) || (q && !p) || p.val !== q.val) return false
+
+//     // 继续比较左右子树是否相同，左右子树都是相同的树时 true - 相同
+//     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
+// };
+
+var isSameTree = function (p, q) {
+    if (!p && !q) return true
+
+    // 如果节点值相同，且左右子树相同，说明是相同的
+    if (
+        p &&
+        q &&
+        p.val === q.val &&
+        isSameTree(p.left, q.left) &&
+        isSameTree(p.right, q.right)
+    )
+        return true
+
+    return false
+}
